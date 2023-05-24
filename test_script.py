@@ -11,7 +11,8 @@ def main():
     trainer.load_model(model_name)
 
     # Prepare the training text
-    training_text = 'Human: What is the weather like today? Assistant: It is sunny.'
+    with open('data.txt', 'r') as f:
+        training_text = f.read()
 
     # Train the model on the training text
     trainer.train(training_text)
